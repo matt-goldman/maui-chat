@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Server", "src\Server\maui-chat.Server.csproj", "{34A15774-0DDB-4567-8B11-70C90C5F0AF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Client", "src\Client\maui-chat.Client.csproj", "{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Shared", "src\Shared\maui-chat.Shared.csproj", "{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|x64.Build.0 = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Debug|x86.Build.0 = Debug|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|x64.ActiveCfg = Release|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|x64.Build.0 = Release|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{34A15774-0DDB-4567-8B11-70C90C5F0AF7}.Release|x86.Build.0 = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|x64.Build.0 = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Debug|x86.Build.0 = Debug|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|x64.ActiveCfg = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|x64.Build.0 = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|x86.ActiveCfg = Release|Any CPU
+		{56AE34B7-B462-4F30-9AD6-0ABF73D4E67B}.Release|x86.Build.0 = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|x64.Build.0 = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Debug|x86.Build.0 = Debug|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|x64.ActiveCfg = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|x64.Build.0 = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|x86.ActiveCfg = Release|Any CPU
+		{5C8C1876-D76D-4753-B5E9-B7AD42E4E504}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A531B0E9-DD98-4465-A7D6-6050A637F800}
+	EndGlobalSection
+EndGlobal
