@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(#0E9AF2,#3CF7E6,#F4E081);
+    height: 100%;
 }
 
 .main {

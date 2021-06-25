@@ -1,9 +1,12 @@
-﻿namespace MauiChat.Messages
+﻿using System.Text.Json.Serialization;
+
+namespace MauiChat.Messages
 {
     public class SimpleTextMessage : Message
     {
         public string Text { get; set; }
 
+        [JsonConstructor]
         public SimpleTextMessage()
         {
 

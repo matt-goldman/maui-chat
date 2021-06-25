@@ -2,35 +2,79 @@
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager NavigationManager
 @implements IAsyncDisposable
-
-<div class="form-group">
-    <label>
-        User:
-        <input @bind="userInput" />
-    </label>
+<div class="container d-flex flex-row">
+    <img width="200" src="/Assets/Images/maui.png"/>
+    <h1 class="display-1" style="color:white;">You're Welcome...<br>to Maui Chat!</h1>
 </div>
-<div class="form-group">
-    <label>
-        Message:
-        <input @bind="messageInput" size="50" />
-    </label>
+<div class="container">
+    <div class="row mb-3">
+        <label for="inputUser" class="col-sm-2 col-form-label">User:</label>
+        <input id="inputUser" @bind="userInput" class="form-control" disabled="@nameDisabled"/>
+    </div>
+    <div class="row mb-3">
+        <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
+        <input id="inputMessage" class="form-control" @bind="messageInput" size="50" />
+    </div>
+    <button class="btn btn-primary" @onclick="Send" disabled="@(!buttonEnabled)">Send</button>
 </div>
-<button @onclick="Send" disabled="@(!IsConnected)">Send</button>
 
 <hr>
 
-<ul id="messagesList">
-    @foreach (var message in messages)
-    {
-        <li>@message</li>
-    }
-</ul>
+<div class="container">
+    <ul id="messagesList" class="fill" style="min-height:100%; color:white;list-style-type:none;">
+        @foreach (var message in messages)
+        {
+            if(message.Username == userInput)
+            {
+                Console.WriteLine("Is own message");
+                // put the message on the right
+                <div class="d-flex flex-row-reverse">
+                    <div class="justify-content-end">
+                        <li>
+                            <hgroup class="speech-bubble-me">
+                                <div class="h3">
+                                    @message.Text
+                                </div>
+                            </hgroup>
+                        </li>
+                    </div>
+                </div>
+            }
+            else
+            {
+                Console.WriteLine("Someone else's message");
+                // put the message on the left
+                <div class="d-flex flex-row">
+                    <li>
+                        <hgroup class="speech-bubble-them">
+                            <div class="h3">
+                                @message.Text
+                            </div>
+                            <div class="h6">
+                                @message.Username
+                            </div>
+                        </hgroup>
+                    </li>
+                </div>
+            }
+        }
+    </ul>
+</div>
 
 @code {
     private HubConnection hubConnection;
-    private List<string> messages = new List<string>();
-    private string userInput;
-    private string messageInput;
+    private List<SimpleTextMessage> messages = new List<SimpleTextMessage>();
+    private string userInput = string.Empty;
+    private string messageInput = string.Empty;
+
+    private bool nameDisabled = false;
+
+    private bool buttonEnabled
+    {
+        get{
+            return userInput.Length > 0 && messageInput.Length > 0 && IsConnected;
+        }
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -38,18 +82,33 @@
             .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
             .Build();
 
-        hubConnection.On<string, string>("ReceiveMessage", (user, message) =>
+        hubConnection.On<SimpleTextMessage>("ReceiveMessage", msg =>
         {
-            var encodedMsg = $"{user}: {message}";
-            messages.Add(encodedMsg);
+            messages.Add(msg);
             StateHasChanged();
         });
 
         await hubConnection.StartAsync();
     }
 
-    async Task Send() =>
-        await hubConnection.SendAsync("SendMessage", userInput, messageInput);
+    async Task Send()
+    {
+        try
+        {
+            var msg = new SimpleTextMessage();
+            msg.Username = userInput;
+            msg.Text = messageInput;
+
+            await hubConnection.SendAsync("SendMessage", msg);
+
+            nameDisabled = true;
+            Console.WriteLine("Sent successfully");
+        }
+        catch
+        {
+            Console.WriteLine("Failed to send");
+        }
+    }
 
     public bool IsConnected =>
         hubConnection.State == HubConnectionState.Connected;
