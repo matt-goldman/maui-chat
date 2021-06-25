@@ -203,6 +203,7 @@ h1.mc-page-content {
 	background: #bd51ab;
 	border-radius: .4em;
     padding: 2em;
+    margin-top: 1em;
 }
 
 .speech-bubble-me:after {
@@ -225,6 +226,7 @@ h1.mc-page-content {
 	background: #ff674d;
 	border-radius: .4em;
     padding: 2em;
+    margin-top: 1em;
 }
 
 .speech-bubble-them:after {

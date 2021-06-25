@@ -2,20 +2,27 @@
 @using Microsoft.AspNetCore.SignalR.Client
 @inject NavigationManager NavigationManager
 @implements IAsyncDisposable
-<div class="container d-flex flex-row">
-    <img width="200" src="/Assets/Images/maui.png"/>
-    <h1 class="display-1" style="color:white;">You're Welcome...<br>to Maui Chat!</h1>
-</div>
-<div class="container">
-    <div class="row mb-3">
-        <label for="inputUser" class="col-sm-2 col-form-label">User:</label>
-        <input id="inputUser" @bind="userInput" class="form-control" disabled="@nameDisabled"/>
+<div class="row">
+    <div class="col-6">
+        <div class="container d-flex flex-row">
+            <img width="200" height="200" src="/Assets/Images/maui.png"/>
+            <h4 class="display-4" style="color:white;">You're Welcome...<br>to Maui Chat!</h4>
+        </div>        
     </div>
-    <div class="row mb-3">
-        <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
-        <input id="inputMessage" class="form-control" @bind="messageInput" size="50" />
-    </div>
-    <button class="btn btn-primary" @onclick="Send" disabled="@(!buttonEnabled)">Send</button>
+
+    <div class="col-6">
+            <div class="container">
+                <div class="row mb-3">
+                    <label for="inputUser" class="col-sm-2 col-form-label">User:</label>
+                    <input id="inputUser" @bind="userInput" class="form-control" disabled="@nameDisabled"/>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
+                    <input id="inputMessage" class="form-control" @bind="messageInput" size="50" />
+                </div>
+                <button class="btn btn-primary" @onclick="Send" disabled="@(!buttonEnabled)">Send</button>
+            </div>
+        </div>
 </div>
 
 <hr>
