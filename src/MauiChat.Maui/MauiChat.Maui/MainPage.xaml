@@ -42,19 +42,21 @@
                     <Entry Grid.Column="1"
                            Grid.Row="0"
                            Placeholder="Enter your name"
+                           Text="{Binding UserName}"
                            x:Name="nameEntry"/>
 
                     <Entry Grid.Column="1"
                            Grid.Row="1"
                            Placeholder="Enter your message"
+                           Text="{Binding Message}"
                            x:Name="messageEntry"/>
                 </Grid>
 
                 <Button Text="Send"
-                    Grid.Row="3"
-                    SemanticProperties.Hint="Counts the number of times you click"
-                    Clicked="OnSendClicked"
-                    HorizontalOptions="Center" />
+                        Grid.Row="3"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        Command="{Binding SendMessageCommand}"
+                        HorizontalOptions="Center" />
 
                 <!--<Image Grid.Row="4"
                     Source="maui.png"
@@ -63,8 +65,32 @@
                     HorizontalOptions="Center" />-->
 
                 <ScrollView Grid.Row="4">
-                    <StackLayout x:Name="messageView">
-                    </StackLayout>
+                    <ScrollView.Resources>
+                        <DataTemplate x:Key="MessageTemplate">
+                            <Frame>
+                                <Label Text="{Binding Message}"/>
+                            </Frame>
+                        </DataTemplate>
+                    </ScrollView.Resources>
+
+                    <FlexLayout Wrap="Wrap"
+                                Direction="Row"
+                                JustifyContent="Start"
+                                AlignItems="Start"
+                                AlignContent="Start"
+                                BindableLayout.ItemTemplate="{StaticResource MessageTemplate}"
+                                BindableLayout.ItemsSource="{Binding Messages}">
+                        <Grid HeightRequest="132"
+                              WidthRequest="132"
+                              FlexLayout.AlignSelf="Center"
+                              Margin="{OnIdiom Phone=15,Default=25}">
+                            <ImageButton
+                                BackgroundColor="Transparent"
+                                Source="add_icon.png"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                        </Grid>
+                    </FlexLayout>
                 </ScrollView>
 
             </Grid>
