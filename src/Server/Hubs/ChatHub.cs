@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
+using mauichat.Shared;
 using Microsoft.AspNetCore.SignalR;
-using MauiChat.Messages;
 
 namespace mauichat.Server.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(SimpleTextMessage msg)
+        public async Task SendMessage(ChatMessage msg)
         {
             await Clients.All.SendAsync("ReceiveMessage", msg);
         }

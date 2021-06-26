@@ -14,25 +14,42 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiImage Include="..\MauiChat.Maui\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\MauiChat.Maui\Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+		<MauiImage
+			Include="..\MauiChat.Maui\Resources\appicon.svg"
+			Link="Resources\appicon.svg"
+			ForegroundFile="..\MauiChat.Maui\Resources\appiconfg.svg"
+			IsAppIcon="true"
+			Color="#512BD4" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="..\MauiChat.Maui\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#512BD4" />
+		<MauiSplashScreen
+			Include="..\MauiChat.Maui\Resources\appiconfg.svg"
+			Link="Resources\appiconfg.svg"
+			Color="#512BD4" />
 
 		<!-- Images -->
-		<MauiImage Include="..\MauiChat.Maui\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
+		<MauiImage
+			Include="..\MauiChat.Maui\Resources\Images\*"
+			Link="Resources\Images\%(Filename)%(Extension)" />
 
 		<!-- Custom Fonts -->
-		<MauiFont Include="..\MauiChat.Maui\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
+		<MauiFont
+			Include="..\MauiChat.Maui\Resources\Fonts\*"
+			Link="Resources\Fonts\%(Filename)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Include="..\MauiChat.Maui\**\*.cs" Exclude="..\MauiChat.Maui\bin\**;..\MauiChat.Maui\obj\**;..\MauiChat.Maui\Android\**;..\MauiChat.Maui\iOS\**;..\MauiChat.Maui\MacCatalyst\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
-		<MauiXaml Include="..\MauiChat.Maui\**\*.xaml" Exclude="..\MauiChat.Maui\bin\**;..\MauiChat.Maui\obj\**" Link="%(RecursiveDir)%(FileName)%(Extension)" />
+		<Compile
+			Include="..\MauiChat.Maui\**\*.cs"
+			Exclude="..\MauiChat.Maui\bin\**;..\MauiChat.Maui\obj\**;..\MauiChat.Maui\Android\**;..\MauiChat.Maui\iOS\**;..\MauiChat.Maui\MacCatalyst\**"
+			Link="%(RecursiveDir)%(Filename)%(Extension)"/>
+		<MauiXaml
+			Include="..\MauiChat.Maui\**\*.xaml"
+			Exclude="..\MauiChat.Maui\bin\**;..\MauiChat.Maui\obj\**"
+			Link="%(RecursiveDir)%(FileName)%(Extension)" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.0-preview.5.21301.17" />
 		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
 	</ItemGroup>
 
@@ -40,7 +57,6 @@
 		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.0-preview" />
 		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.0-preview" />
 		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.0-preview" />
-		<ProjectReference Include="..\..\Shared\maui-chat.Shared.csproj" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.19041.16" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.19041.16" />
 	</ItemGroup>

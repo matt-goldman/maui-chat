@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\maui-chat.Shared.csproj" />
-    <ProjectReference Include="..\..\MauiChat.Messages\MauiChat.Messages.csproj" />
   </ItemGroup>
 
 </Project>

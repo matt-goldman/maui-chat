@@ -1,6 +1,8 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MauiChat.Maui
 {
@@ -10,6 +12,10 @@ namespace MauiChat.Maui
 		{
 			appBuilder
 				.UseMauiApp<App>()
+				.ConfigureServices(services =>
+                {
+					//services.AddSingleton<
+                })
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

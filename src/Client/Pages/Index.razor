@@ -30,38 +30,44 @@
     <ul id="messagesList" class="fill" style="min-height:100%; color:white;list-style-type:none;">
         @foreach (var message in messages)
         {
-            if(message.Username == userInput)
+            string imgSource = $"/Assets/Images/avatar-{message.AvatarId}.png";
+
+            if(message.UserId == userId)
             {
                 Console.WriteLine("Is own message");
                 // put the message on the right
-                <div class="d-flex flex-row-reverse">
-                    <div class="justify-content-end">
-                        <li>
+                <div class="d-flex flex-row-reverse">                    
+                    <li>
+                        <div class="justify-content-end">
                             <hgroup class="speech-bubble-me">
                                 <div class="h3">
-                                    @message.Text
+                                    @message.Message
                                 </div>
                             </hgroup>
-                        </li>
-                    </div>
+                            <img src="@imgSource" class="avatar"/>
+                        </div>
+                    </li>
                 </div>
             }
             else
             {
                 Console.WriteLine("Someone else's message");
                 // put the message on the left
-                <div class="d-flex flex-row">
-                    <li>
+                
+                <li>
+                    <div class="d-flex flex-row">
+                        <img src="@imgSource" class="avatar"/>
                         <hgroup class="speech-bubble-them">
                             <div class="h3">
-                                @message.Text
+                                @message.Message
                             </div>
                             <div class="h6">
-                                @message.Username
+                                @message.UserName
                             </div>
                         </hgroup>
-                    </li>
-                </div>
+                    </div>
+                </li>
+                
             }
         }
     </ul>
@@ -69,9 +75,11 @@
 
 @code {
     private HubConnection hubConnection;
-    private List<SimpleTextMessage> messages = new List<SimpleTextMessage>();
+    private List<ChatMessage> messages = new List<ChatMessage>();
     private string userInput = string.Empty;
     private string messageInput = string.Empty;
+    private string userId;
+    private int avatarId;
 
     private bool nameDisabled = false;
 
@@ -84,11 +92,17 @@
 
     protected override async Task OnInitializedAsync()
     {
+        userId = Guid.NewGuid().ToString();
+
+        Random rnd = new Random();
+
+        avatarId = rnd.Next(1, 8);
+
         hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/chathub"))
             .Build();
 
-        hubConnection.On<SimpleTextMessage>("ReceiveMessage", msg =>
+        hubConnection.On<ChatMessage>("ReceiveMessage", msg =>
         {
             messages.Add(msg);
             StateHasChanged();
@@ -101,9 +115,13 @@
     {
         try
         {
-            var msg = new SimpleTextMessage();
-            msg.Username = userInput;
-            msg.Text = messageInput;
+            var msg = new ChatMessage
+            {
+                UserName = userInput,
+                Message = messageInput,
+                UserId = userId,
+                AvatarId = avatarId
+            };
 
             await hubConnection.SendAsync("SendMessage", msg);
 

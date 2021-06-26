@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31220.234
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.Maui", "MauiChat.Maui\MauiChat.Maui.csproj", "{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.Maui", "MauiChat.Maui\MauiChat.Maui.csproj", "{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.Maui.WinUI", "MauiChat.Maui.WinUI\MauiChat.Maui.WinUI.csproj", "{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.Maui.WinUI", "MauiChat.Maui.WinUI\MauiChat.Maui.WinUI.csproj", "{58ADC222-E999-4E8F-B102-BF18318016A4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.Messages", "..\..\MauiChat.Messages\MauiChat.Messages.csproj", "{FE2FE1D9-62E3-424F-88CB-5C261AC8B207}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Shared", "..\Shared\maui-chat.Shared.csproj", "{44EBBBD4-41E8-4439-9072-ACD42981422D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,22 +15,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EAF4FFB-21AA-487F-B3CD-D2CF0A3CE1E3}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FC26D80-F79A-4FCD-BE3D-02BF013F7E2E}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{FE2FE1D9-62E3-424F-88CB-5C261AC8B207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE2FE1D9-62E3-424F-88CB-5C261AC8B207}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE2FE1D9-62E3-424F-88CB-5C261AC8B207}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE2FE1D9-62E3-424F-88CB-5C261AC8B207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22ED08B9-16A1-4737-A8B9-E865AF13E5A0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58ADC222-E999-4E8F-B102-BF18318016A4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{44EBBBD4-41E8-4439-9072-ACD42981422D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44EBBBD4-41E8-4439-9072-ACD42981422D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44EBBBD4-41E8-4439-9072-ACD42981422D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44EBBBD4-41E8-4439-9072-ACD42981422D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

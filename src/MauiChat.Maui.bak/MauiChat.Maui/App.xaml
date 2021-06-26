@@ -7,10 +7,10 @@
             <Color x:Key="PageBackgroundColor">#512bdf</Color>
             <Color x:Key="PrimaryTextColor">White</Color>
 
-            <Color x:Key="GradientStart">#0E9AF2</Color>
+            <Color x:Key="GradientStart">#F4E081</Color>
             <Color x:Key="GradientVia">#3CF7E6</Color>
-            <Color x:Key="GradientFinish">#F4E081</Color>
-
+            <Color x:Key="GradientFinish">#0E9AF2<Color>
+            
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
                 <Setter Property="FontFamily" Value="OpenSansRegular" />

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<!-- iOS, Android, MacCatalyst -->
@@ -33,19 +33,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\avatar1.png" />
-	  <None Remove="Resources\Images\avatar2.png" />
-	  <None Remove="Resources\Images\avatar3.png" />
-	  <None Remove="Resources\Images\avatar4.png" />
-	  <None Remove="Resources\Images\avatar5.png" />
-	  <None Remove="Resources\Images\avatar6.png" />
-	  <None Remove="Resources\Images\avatar7.png" />
-	  <None Remove="Resources\Images\avatar8.png" />
+	  <MauiXaml Remove="Pages\SimpleChatPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\maui.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.0-preview.5.21301.17" />
+	  <EmbeddedResource Include="Pages\SimpleChatPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
 	</ItemGroup>
 
