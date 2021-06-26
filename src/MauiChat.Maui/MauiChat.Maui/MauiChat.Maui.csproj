@@ -61,5 +61,15 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Shared\maui-chat.Shared.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Compile Update="Controls\MessageView.xaml.cs">
+	    <DependentUpon>MessageView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiXaml Update="Controls\MessageView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
 
 </Project>

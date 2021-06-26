@@ -16,6 +16,7 @@ namespace MauiChat.Maui
 
 		protected override async void OnAppearing()
         {
+			base.OnAppearing();
 			await ViewModel.Initialise();
         }
 	}

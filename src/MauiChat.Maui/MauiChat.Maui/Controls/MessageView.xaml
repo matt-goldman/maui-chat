@@ -1,0 +1,91 @@
+﻿<Grid xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      x:Class="MauiChat.Maui.Controls.MessageView">
+    <Grid IsVisible="{Binding IsMe}"
+          RowDefinitions="Auto,Auto"
+          ColumnDefinitions="4*,2*,2*">
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
+              BackgroundColor="{DynamicResource MyMessageBackground}"
+              HorizontalOptions="EndAndExpand"
+              VerticalOptions="Center"
+              RowDefinitions="*,*">
+            <Label Grid.Row="0"
+                   FontSize="Header"
+                   TextColor="White"
+                   Text="{Binding Message}"/>
+            <Label Grid.Row="1"
+                   FontSize="Small"
+                   TextColor="White"
+                   Text="{Binding Username}"/>
+        </Grid>
+
+        <Polygon Points="0,40, 80,80, 0,80"
+                 Fill="{DynamicResource MyMessageBackground}"
+                 Grid.Row="0"
+                 Grid.Column="2"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="Center"/>
+
+        <Image Source="{Binding AvatarIcon}"
+               WidthRequest="50"
+               HeightRequest="50"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+            <Image.Clip>
+                <EllipseGeometry Center="25,25"
+                                 RadiusX="25"
+                                 RadiusY="25"/>
+            </Image.Clip>
+        </Image>
+
+    </Grid>
+
+    <Grid IsVisible="{Binding IsNotMe}"
+          RowDefinitions="Auto,Auto"
+          ColumnDefinitions="2*,2*,4*">
+        <Grid Grid.Row="0"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              BackgroundColor="{DynamicResource OthersMessageBackground}"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="Center"
+              RowDefinitions="*,*">
+            <Label Grid.Row="0"
+                   FontSize="Header"
+                   TextColor="White"
+                   Text="{Binding Message}"/>
+            <Label Grid.Row="1"
+                   FontSize="Small"
+                   TextColor="White"
+                   Text="{Binding Username}"/>
+        </Grid>
+
+        <Polygon Points="80,40, 0,80, 80,80"
+                 Fill="{DynamicResource OthersMessageBackground}"
+                 Grid.Row="0"
+                 Grid.Column="2"
+                 HorizontalOptions="EndAndExpand"
+                 VerticalOptions="Center"/>
+
+        <Image Source="{Binding AvatarIcon}"
+               WidthRequest="50"
+               HeightRequest="50"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+            <Image.Clip>
+                <EllipseGeometry Center="25,25"
+                                 RadiusX="25"
+                                 RadiusY="25"/>
+            </Image.Clip>
+        </Image>
+        
+    </Grid>
+</Grid>

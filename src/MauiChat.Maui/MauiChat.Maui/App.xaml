@@ -11,6 +11,9 @@
             <Color x:Key="GradientVia">#3CF7E6</Color>
             <Color x:Key="GradientFinish">#F4E081</Color>
 
+            <Color x:Key="MyMessageBackground">#bd51ab</Color>
+            <Color x:Key="OthersMessageBackground">#ff674d</Color>
+
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource PrimaryTextColor}" />
                 <Setter Property="FontFamily" Value="OpenSansRegular" />

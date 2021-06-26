@@ -1,6 +1,7 @@
 ﻿using mauichat.Shared;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,21 +16,6 @@ namespace MauiChat.Maui.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<ChatMessage> messages { get; set; } = new ObservableCollection<ChatMessage>();
-        public ObservableCollection<ChatMessage> Messages
-        { 
-            get
-            {
-                return messages;
-            }
-
-            set
-            {
-                messages = value;
-                OnPropertyChanged();
-            }
-        }
-
         private HubConnection hubConnection;
 
         private string userId;
@@ -41,6 +27,12 @@ namespace MauiChat.Maui.ViewModels
 
         public ICommand SendMessageCommand { get; set; }
 
+        public ChatMessage Message1 { get; set; }
+        public ChatMessage Message2 { get; set; }
+        public ChatMessage Message3 { get; set; }
+        public ChatMessage Message4 { get; set; }
+
+        private string[] MessageList = { nameof(Message1), nameof(Message2), nameof(Message3), nameof(Message4) };
 
         public bool IsConnected =>
             hubConnection.State == HubConnectionState.Connected;
@@ -48,7 +40,6 @@ namespace MauiChat.Maui.ViewModels
         public MainViewModel()
         {
             SendMessageCommand = new Command(async () => await Send());
-            Messages = new ObservableCollection<ChatMessage>();
         }
 
         public async Task Initialise()
@@ -67,11 +58,14 @@ namespace MauiChat.Maui.ViewModels
             {
                 try
                 {
-                    messages.Add(msg);
                     Console.WriteLine($"Received message {msg.Message}");
                     Console.WriteLine($"From {msg.UserName}");
-                    Messages.Clear();
-                    Messages = messages;
+                    Message1 = Message2;
+                    Message2 = Message3;
+                    Message3 = Message4;
+                    Message4 = msg;
+
+                    MessageList.ForEach(m => OnPropertyChanged(m));
                 }
                 catch (Exception ex)
                 {
