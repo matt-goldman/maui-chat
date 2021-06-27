@@ -27,60 +27,16 @@
 <hr>
 
 <div class="container">
-    <ul id="messagesList" class="fill" style="min-height:100%; color:white;list-style-type:none;">
-        @foreach (var message in messages)
-        {
-            string imgSource = $"/Assets/Images/avatar-{message.AvatarId}.png";
-
-            if(message.UserId == userId)
-            {
-                Console.WriteLine("Is own message");
-                // put the message on the right
-                <div class="d-flex flex-row-reverse">                    
-                    <li>
-                        <div class="justify-content-end">
-                            <hgroup class="speech-bubble-me">
-                                <div class="h3">
-                                    @message.Message
-                                </div>
-                            </hgroup>
-                            <img src="@imgSource" class="avatar"/>
-                        </div>
-                    </li>
-                </div>
-            }
-            else
-            {
-                Console.WriteLine("Someone else's message");
-                // put the message on the left
-                
-                <li>
-                    <div class="d-flex flex-row">
-                        <img src="@imgSource" class="avatar"/>
-                        <hgroup class="speech-bubble-them">
-                            <div class="h3">
-                                @message.Message
-                            </div>
-                            <div class="h6">
-                                @message.UserName
-                            </div>
-                        </hgroup>
-                    </div>
-                </li>
-                
-            }
-        }
-    </ul>
+    <MessageList @ref="messageList" UserId="@userId"></MessageList>
 </div>
 
 @code {
     private HubConnection hubConnection;
-    private List<ChatMessage> messages = new List<ChatMessage>();
+    
     private string userInput = string.Empty;
     private string messageInput = string.Empty;
     private string userId;
     private int avatarId;
-
     private bool nameDisabled = false;
 
     private bool buttonEnabled
@@ -89,6 +45,8 @@
             return userInput.Length > 0 && messageInput.Length > 0 && IsConnected;
         }
     }
+
+    MessageList messageList;
 
     protected override async Task OnInitializedAsync()
     {
@@ -104,7 +62,7 @@
 
         hubConnection.On<ChatMessage>("ReceiveMessage", msg =>
         {
-            messages.Add(msg);
+            messageList.AddMessage(msg);
             StateHasChanged();
         });
 

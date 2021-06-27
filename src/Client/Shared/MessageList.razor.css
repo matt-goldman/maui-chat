@@ -1,0 +1,58 @@
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .speech-bubble-me {
+	position: relative;
+	background: #bd51ab;
+	border-radius: .4em;
+    padding: 2em;
+    margin-top: 1em;
+}
+
+.speech-bubble-me:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.844em solid transparent;
+	border-left-color: #bd51ab;
+	border-right: 0;
+	border-bottom: 0;
+	margin-top: -0.422em;
+	margin-right: -0.844em;
+}
+
+.speech-bubble-them {
+	position: relative;
+	background: #ff674d;
+	border-radius: .4em;
+    padding: 2em;
+    margin-top: 1em;
+}
+
+.speech-bubble-them:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 0.844em solid transparent;
+	border-right-color: #ff674d;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -0.422em;
+	margin-left: -0.844em;
+}
+
+.message-list {
+    min-height: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
