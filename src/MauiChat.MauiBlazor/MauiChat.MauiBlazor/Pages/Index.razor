@@ -1,7 +1,98 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.SignalR.Client
+@inject NavigationManager NavigationManager
+@implements IAsyncDisposable
+<div class="chat-header">
+    <div>
+        <img src="/Assets/Images/maui.png" width="50" height="50"/>
+    </div>
 
-<h1>Hello, world!</h1>
+    <div>
+        <h4 class="chat-title" style="color:white;">You're Welcome...to Maui Chat!</h4>
+    </div>
 
-Welcome to your new app.
+    <div>
+        <div class="row mb-3">
+            <label for="inputUser" class="col-sm-2 col-form-label">User:</label>
+            <input id="inputUser" @bind="userInput" class="form-control" disabled="@nameDisabled"/>
+        </div>
+        <div class="row mb-3">
+            <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
+            <input id="inputMessage" class="form-control" @bind="messageInput" size="50" />
+        </div>
+        <button class="btn btn-primary" @onclick="Send">Send</button>
+    </div>
+</div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<hr>
+
+<div class="container">
+    <MessageList @ref="messageList" UserId="@userId"></MessageList>
+</div>
+
+@code {
+    private HubConnection hubConnection;
+    
+    private string userInput = string.Empty;
+    private string messageInput = string.Empty;
+    private string userId;
+    private int avatarId;
+    private bool nameDisabled = false;
+
+    MessageList messageList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        userId = Guid.NewGuid().ToString();
+
+        Random rnd = new Random();
+
+        avatarId = rnd.Next(1, 8);
+
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl("https://maui-chat.azurewebsites.net/chathub")
+            .Build();
+
+        hubConnection.On<ChatMessage>("ReceiveMessage", msg =>
+        {
+            messageList.AddMessage(msg);
+            StateHasChanged();
+        });
+
+        await hubConnection.StartAsync();
+    }
+
+    async Task Send()
+    {
+        if(!string.IsNullOrWhiteSpace(userInput) && !string.IsNullOrWhiteSpace(messageInput))
+        {
+            try
+            {
+                var msg = new ChatMessage
+                {
+                    UserName = userInput,
+                    Message = messageInput,
+                    UserId = userId,
+                    AvatarId = avatarId
+                };
+
+                await hubConnection.SendAsync("SendMessage", msg);
+
+                nameDisabled = true;
+                Console.WriteLine("Sent successfully");
+            }
+            catch
+            {
+                Console.WriteLine("Failed to send");
+            }
+        }
+    }
+
+    public bool IsConnected =>
+        hubConnection.State == HubConnectionState.Connected;
+
+    public async ValueTask DisposeAsync()
+    {
+        await hubConnection.DisposeAsync();
+    }
+}

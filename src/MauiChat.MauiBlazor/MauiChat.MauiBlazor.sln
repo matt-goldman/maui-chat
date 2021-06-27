@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.MauiBlazor", "Maui
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiChat.MauiBlazor.WinUI", "MauiChat.MauiBlazor.WinUI\MauiChat.MauiBlazor.WinUI.csproj", "{6EF97D7B-B45C-4741-A350-44E44543459F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.razor", "..\..\maui-chat.razor\maui-chat.razor.csproj", "{8D08B352-0205-4773-832F-C671AAC6219A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Shared", "..\Shared\maui-chat.Shared.csproj", "{2968D0E1-747C-4D55-9B8C-5C3EBABB7067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{6EF97D7B-B45C-4741-A350-44E44543459F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EF97D7B-B45C-4741-A350-44E44543459F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6EF97D7B-B45C-4741-A350-44E44543459F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8D08B352-0205-4773-832F-C671AAC6219A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D08B352-0205-4773-832F-C671AAC6219A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D08B352-0205-4773-832F-C671AAC6219A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D08B352-0205-4773-832F-C671AAC6219A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2968D0E1-747C-4D55-9B8C-5C3EBABB7067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2968D0E1-747C-4D55-9B8C-5C3EBABB7067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2968D0E1-747C-4D55-9B8C-5C3EBABB7067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2968D0E1-747C-4D55-9B8C-5C3EBABB7067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

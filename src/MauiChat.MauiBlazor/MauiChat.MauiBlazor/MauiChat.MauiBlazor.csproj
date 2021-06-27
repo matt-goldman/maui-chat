@@ -20,11 +20,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiImage
-			Include="Resources\appicon.svg"
-			ForegroundFile="Resources\appiconfg.svg"
-			IsAppIcon="true"
-			Color="#512BD4" />
+		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
@@ -37,7 +33,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\avatar-1.png" />
+	  <None Remove="Resources\Images\avatar-2.png" />
+	  <None Remove="Resources\Images\avatar-3.png" />
+	  <None Remove="Resources\Images\avatar-4.png" />
+	  <None Remove="Resources\Images\avatar-5.png" />
+	  <None Remove="Resources\Images\avatar-6.png" />
+	  <None Remove="Resources\Images\avatar-7.png" />
+	  <None Remove="Resources\Images\avatar-8.png" />
+	  <None Remove="Resources\Images\maui.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="6.0.100-preview.5.794" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.7" />
 		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.5.*" />
 		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.5.794" />
 	</ItemGroup>
@@ -50,6 +59,10 @@
 	</PropertyGroup>
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
 		<AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\maui-chat.razor\maui-chat.razor.csproj" />
+	  <ProjectReference Include="..\..\Shared\maui-chat.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

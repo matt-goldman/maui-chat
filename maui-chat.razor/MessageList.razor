@@ -1,7 +1,7 @@
 <ul id="messagesList" class="fill" style="min-height:100%; color:white;list-style-type:none;">
     @foreach (var message in Messages)
     {
-        string imgSource = $"/Assets/Images/avatar-{message.AvatarId}.png";
+        string imgSource = $"/Assets/Images/avatar{message.AvatarId}.png";
 
         if(message.UserId == UserId)
         {
