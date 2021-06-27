@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "MauiChat.Maui.WinUI": {
-      "commandName": "AppContainer"
-    }
-  }
-}

@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\maui-chat.razor\maui-chat.razor.csproj" />
     <ProjectReference Include="..\Shared\maui-chat.Shared.csproj" />
   </ItemGroup>
 

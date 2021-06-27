@@ -20,7 +20,7 @@
             <label for="inputMessage" class="col-sm-2 col-form-label">Message:</label>
             <input id="inputMessage" class="form-control" @bind="messageInput" size="50" />
         </div>
-        <button class="btn btn-primary" @onclick="Send" disabled="@(!buttonEnabled)">Send</button>
+        <button class="btn btn-primary" @onclick="Send">Send</button>
     </div>
 </div>
 
@@ -38,13 +38,6 @@
     private string userId;
     private int avatarId;
     private bool nameDisabled = false;
-
-    private bool buttonEnabled
-    {
-        get{
-            return userInput.Length > 0 && messageInput.Length > 0 && IsConnected;
-        }
-    }
 
     MessageList messageList;
 
@@ -71,24 +64,27 @@
 
     async Task Send()
     {
-        try
+        if(!string.IsNullOrWhiteSpace(userInput) && !string.IsNullOrWhiteSpace(messageInput))
         {
-            var msg = new ChatMessage
+            try
             {
-                UserName = userInput,
-                Message = messageInput,
-                UserId = userId,
-                AvatarId = avatarId
-            };
+                var msg = new ChatMessage
+                {
+                    UserName = userInput,
+                    Message = messageInput,
+                    UserId = userId,
+                    AvatarId = avatarId
+                };
 
-            await hubConnection.SendAsync("SendMessage", msg);
+                await hubConnection.SendAsync("SendMessage", msg);
 
-            nameDisabled = true;
-            Console.WriteLine("Sent successfully");
-        }
-        catch
-        {
-            Console.WriteLine("Failed to send");
+                nameDisabled = true;
+                Console.WriteLine("Sent successfully");
+            }
+            catch
+            {
+                Console.WriteLine("Failed to send");
+            }
         }
     }
 
