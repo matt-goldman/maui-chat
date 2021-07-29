@@ -78,6 +78,8 @@
 
                 await hubConnection.SendAsync("SendMessage", msg);
 
+                messageInput = string.Empty;
+
                 nameDisabled = true;
                 Console.WriteLine("Sent successfully");
             }
