@@ -1,0 +1,110 @@
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="messageView"
+             x:Class="MauiChat.Maui.Controls.MessageView">
+    <Grid>
+        <Grid x:Name="MyMessageGrid"
+          RowDefinitions="Auto,Auto"
+          IsVisible="{Binding Source={x:Reference messageView}, Path=IsMe}"
+          ColumnDefinitions="4*,2*,2*">
+            <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
+              BackgroundColor="{DynamicResource MyMessageBackground}"
+              HorizontalOptions="EndAndExpand"
+              VerticalOptions="StartAndExpand"
+              Padding="5"
+              RowDefinitions="*,*">
+                <Label Grid.Row="0"
+                   FontSize="Large"
+                   TextColor="White"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding Source={x:Reference messageView}, Path=Message}"/>
+                <Label Grid.Row="1"
+                   FontSize="Small"
+                   TextColor="White"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Text="{Binding Source={x:Reference messageView}, Path=Username}"/>
+            </Grid>
+
+            <Polygon Points="0,0, 20,20, 0,40"
+                 Fill="{DynamicResource MyMessageBackground}"
+                 Stroke="{DynamicResource MyMessageBackground}"
+                 Grid.Row="0"
+                 Grid.Column="2"
+                 HorizontalOptions="StartAndExpand"
+                 VerticalOptions="CenterAndExpand"/>
+
+            <Image x:Name="MyMessageAvatar"
+               WidthRequest="50"
+               HeightRequest="50"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Source="{Binding Source={x:Reference messageView}, Path=AvatarIcon}"
+               VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="25,25"
+                                 RadiusX="25"
+                                 RadiusY="25"/>
+                </Image.Clip>
+            </Image>
+
+        </Grid>
+
+        <Grid x:Name="TheirMessageGrid"
+          IsVisible="{Binding Source={x:Reference messageView}, Path=IsNotMe}"
+          RowDefinitions="Auto,Auto"
+          ColumnDefinitions="2*,2*,4*">
+            <Grid Grid.Row="0"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              BackgroundColor="{DynamicResource OthersMessageBackground}"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="Center"
+              Padding="5"
+              RowDefinitions="*,*">
+                <Label Grid.Row="0"
+                   FontSize="Large"
+                   TextColor="White"
+                   Text="{Binding Source={x:Reference messageView}, Path=Message}"
+                   HorizontalOptions="CenterAndExpand"
+                   x:Name="TheirMessageText"/>
+                <Label Grid.Row="1"
+                   FontSize="Small"
+                   TextColor="White"
+                   Text="{Binding Source={x:Reference messageView}, Path=Username}"
+                   HorizontalOptions="StartAndExpand"
+                   x:Name="TheirMessageUserName"/>
+            </Grid>
+
+            <Polygon Points="0,20, 20,0, 20,40"
+                 Fill="{DynamicResource OthersMessageBackground}"
+                 Stroke="{DynamicResource OthersMessageBackground}"
+                 Grid.Row="0"
+                 Grid.Column="2"
+                 HorizontalOptions="EndAndExpand"
+                 VerticalOptions="Center"/>
+
+            <Image x:Name="TheirMessageAvatar"
+               WidthRequest="50"
+               HeightRequest="50"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2"
+               HorizontalOptions="Center"
+               Source="{Binding Source={x:Reference messageView}, Path=AvatarIcon}"
+               VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="25,25"
+                                 RadiusX="25"
+                                 RadiusY="25"/>
+                </Image.Clip>
+            </Image>
+
+        </Grid>
+    </Grid>
+</ContentView>

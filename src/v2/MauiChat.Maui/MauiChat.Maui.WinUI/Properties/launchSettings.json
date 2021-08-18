@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MauiChat.Maui.WinUI": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    }
+  }
+}
