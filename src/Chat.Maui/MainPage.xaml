@@ -59,16 +59,14 @@
 
                 <Entry Grid.Column="1"
                            Grid.Row="0"
-                           TextColor="White"
                            Placeholder="Enter your name"
-                           Text="{Binding UserName}"
+                           Text="{Binding UserName, Mode=TwoWay}"
                            x:Name="nameEntry"/>
 
                 <Entry Grid.Column="1"
-                           Grid.Row="1"
-                           TextColor="White"
+                       Grid.Row="1"
                            Placeholder="Enter your message"
-                           Text="{Binding Message}"
+                           Text="{Binding Message, Mode=TwoWay}"
                            x:Name="messageEntry"/>
             </Grid>
 
