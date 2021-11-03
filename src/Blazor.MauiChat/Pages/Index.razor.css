@@ -1,0 +1,49 @@
+﻿img {
+    width: 75px;
+    height: 75px;
+}
+
+.chat-title {
+    font-size: 30px;
+    vertical-align: middle;
+}
+/* sm */
+@media (min-width: 768px) {
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .chat-title {
+        font-size: 40px;
+    }
+}
+/* md */
+@media (min-width: 992px) {
+    img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .chat-title {
+        font-size: 50px;
+    }
+}
+/* lg */
+@media (min-width: 1200px) {
+    img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .chat-title {
+        font-size: 60px;
+    }
+}
+
+.chat-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}

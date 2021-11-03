@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Maui", "Chat.Maui.csproj", "{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "maui-chat.Shared", "..\Shared\maui-chat.Shared.csproj", "{D4C8195A-37CC-447D-989A-C8396DD65F21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E12424-150E-4D5A-AD8A-D0C38E30D4AF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D4C8195A-37CC-447D-989A-C8396DD65F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C8195A-37CC-447D-989A-C8396DD65F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C8195A-37CC-447D-989A-C8396DD65F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C8195A-37CC-447D-989A-C8396DD65F21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal
