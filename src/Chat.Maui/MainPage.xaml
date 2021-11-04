@@ -77,109 +77,108 @@
                         HorizontalOptions="Center" />
 
             <ScrollView Grid.Row="4">
-                <StackLayout HeightRequest="500">
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <StackLayout Orientation="Horizontal"
+                <VerticalStackLayout HeightRequest="800">
+                    <HorizontalStackLayout HeightRequest="70"
                                      HorizontalOptions="FillAndExpand">
-                            <StackLayout HorizontalOptions="FillAndExpand">
-                                <Label FontSize="Large"
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand"
+                                             HeightRequest="70">
+                            <Label FontSize="Large"
                                        TextColor="White"
                                        Text="{Binding Message4Text}"/>
 
-                                <Label FontSize="Small"
+                            <Label FontSize="Small"
                                        TextColor="White"
                                        Text="{Binding Message4Username}"/>
-                            </StackLayout>
-                            <Image WidthRequest="50"
+                        </VerticalStackLayout>
+                        <Image WidthRequest="50"
                                    HeightRequest="50"
+                               Margin="5,0,0,0"
                                    Source="{Binding Message4Avatar}"
                                    VerticalOptions="Center">
-                                <Image.Clip>
-                                    <EllipseGeometry Center="25,25"
-                                                     RadiusX="25"
-                                                     RadiusY="25"/>
-                                </Image.Clip>
-                            </Image>
-                        </StackLayout>
-                    </StackLayout>
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60"
+                                                     RadiusX="60"
+                                                     RadiusY="60"/>
+                            </Image.Clip>
+                        </Image>
+                    </HorizontalStackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <StackLayout Orientation="Horizontal"
+                    <HorizontalStackLayout HeightRequest="70"
                                      HorizontalOptions="FillAndExpand">
-                            <StackLayout HorizontalOptions="FillAndExpand">
-                                <Label FontSize="Large"
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand"
+                                             HeightRequest="70">
+                            <Label FontSize="Large"
                                        TextColor="White"
                                        Text="{Binding Message3Text}"/>
 
-                                <Label FontSize="Small"
+                            <Label FontSize="Small"
                                        TextColor="White"
                                        Text="{Binding Message3Username}"/>
-                            </StackLayout>
-                            <Image WidthRequest="50"
+                        </VerticalStackLayout>
+                        <Image WidthRequest="50"
                                    HeightRequest="50"
+                               Margin="5,0,0,0"
                                    Source="{Binding Message3Avatar}"
                                    VerticalOptions="Center">
-                                <Image.Clip>
-                                    <EllipseGeometry Center="25,25"
-                                                     RadiusX="25"
-                                                     RadiusY="25"/>
-                                </Image.Clip>
-                            </Image>
-                        </StackLayout>
-                    </StackLayout>
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60"
+                                                     RadiusX="60"
+                                                     RadiusY="60"/>
+                            </Image.Clip>
+                        </Image>
+                    </HorizontalStackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <StackLayout Orientation="Horizontal"
+                    <HorizontalStackLayout HeightRequest="70"
                                      HorizontalOptions="FillAndExpand">
-                            <StackLayout HorizontalOptions="FillAndExpand">
-                                <Label FontSize="Large"
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand"
+                                             HeightRequest="70">
+                            <Label FontSize="Large"
                                        TextColor="White"
                                        Text="{Binding Message2Text}"/>
 
-                                <Label FontSize="Small"
+                            <Label FontSize="Small"
                                        TextColor="White"
                                        Text="{Binding Message2Username}"/>
-                            </StackLayout>
-                            <Image WidthRequest="50"
+                        </VerticalStackLayout>
+                        <Image WidthRequest="50"
                                    HeightRequest="50"
+                               Margin="5,0,0,0"
                                    Source="{Binding Message2Avatar}"
                                    VerticalOptions="Center">
-                                <Image.Clip>
-                                    <EllipseGeometry Center="25,25"
-                                                     RadiusX="25"
-                                                     RadiusY="25"/>
-                                </Image.Clip>
-                            </Image>
-                        </StackLayout>
-                    </StackLayout>
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60"
+                                                     RadiusX="60"
+                                                     RadiusY="60"/>
+                            </Image.Clip>
+                        </Image>
+                    </HorizontalStackLayout>
 
-                    <StackLayout HorizontalOptions="FillAndExpand">
-                        <StackLayout Orientation="Horizontal"
+                    <HorizontalStackLayout HeightRequest="70"
                                      HorizontalOptions="FillAndExpand">
-                            <StackLayout HorizontalOptions="FillAndExpand">
-                                <Label FontSize="Large"
+                        <VerticalStackLayout HorizontalOptions="FillAndExpand"
+                                             HeightRequest="70">
+                            <Label FontSize="Large"
                                        TextColor="White"
                                        Text="{Binding Message1Text}"/>
 
-                                <Label FontSize="Small"
+                            <Label FontSize="Small"
                                        TextColor="White"
                                        Text="{Binding Message1Username}"/>
-
-                            </StackLayout>
-                            <Image WidthRequest="50"
+                        </VerticalStackLayout>
+                        <Image WidthRequest="50"
                                    HeightRequest="50"
+                               Margin="5,0,0,0"
                                    Source="{Binding Message1Avatar}"
                                    VerticalOptions="Center">
-                                <Image.Clip>
-                                    <EllipseGeometry Center="25,25"
-                                                     RadiusX="25"
-                                                     RadiusY="25"/>
-                                </Image.Clip>
-                            </Image>
-                        </StackLayout>
-                    </StackLayout>
+                            <Image.Clip>
+                                <EllipseGeometry Center="60,60"
+                                                     RadiusX="60"
+                                                     RadiusY="60"/>
+                            </Image.Clip>
+                        </Image>
+                    </HorizontalStackLayout>
 
-                </StackLayout>
+                </VerticalStackLayout>
             </ScrollView>
         </Grid>
     </StackLayout>
